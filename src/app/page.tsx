@@ -4,22 +4,19 @@ import Link from "next/link";
 
 const perks = [
     {
-        name: "Instant Delivery",
+        name: "Надежная доставка",
         Icon: ArrowDownToLine,
-        description:
-            "Get your assets delivered to your email in seconds and download them right away.",
+        description: "Описание",
     },
     {
-        name: "Guaranteed Quality",
+        name: "Гарантированное качество",
         Icon: CheckCircle,
-        description:
-            "Every asset on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.",
+        description: "Описание",
     },
     {
-        name: "For the Planet",
+        name: "Сохранение планеты",
         Icon: Leaf,
-        description:
-            "We've pledged 1% of sales to the preservation and restoration of the natural environment.",
+        description: "Описание",
     },
 ];
 
