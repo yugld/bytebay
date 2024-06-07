@@ -1,1 +1,1 @@
-shop created with react, tailwind
+created with react, tailwind
