@@ -24,10 +24,12 @@ const Page = () => {
         resolver: zodResolver(AuthCredentialsValidator),
     });
 
-    const { data } = trpc.anyApiRoute.useQuery();
-    console.log(data);
+    // const { data } = trpc.anyApiRoute.useQuery();
+    // console.log(data);
+
+    const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({});
     const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {
-        //отправка данных
+        mutate({ email, password });
     };
 
     return (
