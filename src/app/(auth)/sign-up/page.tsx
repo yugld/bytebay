@@ -14,6 +14,9 @@ import {
     AuthCredentialsValidator,
     TAuthCredentialsValidator,
 } from "@/lib/validators/account-credentials-validator";
+import { toast } from "sonner";
+import { ZodError } from "zod";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
     const {
@@ -26,8 +29,34 @@ const Page = () => {
 
     // const { data } = trpc.anyApiRoute.useQuery();
     // console.log(data);
+    const router = useRouter();
 
-    const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({});
+    const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({
+        onError: (err) => {
+            if (err.data?.code === "CONFLICT") {
+                toast.error(
+                    "Этот email уже используется. Перейти на страницу входа?"
+                );
+
+                return;
+            }
+
+            if (err instanceof ZodError) {
+                toast.error(err.issues[0].message);
+
+                return;
+            }
+
+            toast.error("Что-то пошло не так... Попробуйте снова!");
+        },
+        onSuccess: ({ sentToEmail }) => {
+            toast.success(
+                `Письмо для подтверждения отправлено на ${sentToEmail}.`
+            );
+            router.push("/verify-email?to=" + sentToEmail);
+        },
+    });
+
     const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {
         mutate({ email, password });
     };
