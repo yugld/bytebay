@@ -5,11 +5,11 @@ import NavItems from "./NavItems";
 import { cookies } from "next/headers";
 import { buttonVariants } from "./ui/button";
 import Cart from "./Cart";
+import { getServerSideUser } from "@/lib/payload-utils";
 
 const Navbar = async () => {
     const nextCookies = cookies();
-    //Change!
-    const user = null;
+    const { user } = await getServerSideUser(nextCookies);
 
     return (
         <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
@@ -36,7 +36,7 @@ const Navbar = async () => {
                                                 variant: "ghost",
                                             })}
                                         >
-                                            Sign in
+                                            Войти
                                         </Link>
                                     )}
 
