@@ -30,7 +30,7 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
     if (data?.success) {
         return (
             <div className="flex h-full flex-col items-center justify-center">
-                <h3 className="font-semibold text-2xl">You&apos;re all set!</h3>
+                <h3 className="font-semibold text-2xl">Готово!</h3>
                 <p className="text-muted-foreground text-center mt-1">
                     Спасибо за подтверждение аккаунта!
                 </p>
