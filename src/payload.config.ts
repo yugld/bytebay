@@ -24,7 +24,7 @@ export default buildConfig({
     user: 'users',
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: '- MyShop',
+      titleSuffix: '- ByteBay',
       favicon: '/favicon.ico',
       ogImage: '/thumbnail.jpg',
     },
