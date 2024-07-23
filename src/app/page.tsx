@@ -38,7 +38,9 @@ export default function Home() {
                         <Link href="/products" className={buttonVariants()}>
                             Перейти к предложениям
                         </Link>
-                        <Button variant="ghost">Наша поддержка&rarr;</Button>
+                        <Button variant="ghost" className="text-center">
+                            Наша поддержка&rarr;
+                        </Button>
                     </div>
                 </div>
 
@@ -58,7 +60,7 @@ export default function Home() {
                                 className="text-center md:flex md:items-start md:text-left lg:block lg:text-center"
                             >
                                 <div className="md:flex-shrink-0 flex justify-center">
-                                    <div className="h-16 w-16 flex items-center justify-center rounded-full bg-primary text-yellow-900">
+                                    <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gray-200 text-violet-900">
                                         {<perk.Icon className="w-1/3 h-1/3" />}
                                     </div>
                                 </div>

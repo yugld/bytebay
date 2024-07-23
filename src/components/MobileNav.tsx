@@ -81,7 +81,7 @@ const MobileNav = () => {
                                                         <Image
                                                             fill
                                                             src={item.imageSrc}
-                                                            alt="product category image"
+                                                            alt="Категория товара"
                                                             className="object-cover object-center"
                                                         />
                                                     </div>
