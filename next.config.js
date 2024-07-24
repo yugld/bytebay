@@ -4,9 +4,11 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: "http",
-                pathname: "**",
-                port: "3000",
                 hostname: "localhost",
+            },
+            {
+                protocol: "https",
+                hostname: "bytebay-production.up.railway.app",
             },
         ],
     },
