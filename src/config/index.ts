@@ -1,22 +1,22 @@
 export const PRODUCT_CATEGORIES = [
     {
-      label: 'UI компоненты',
+      label: 'UI Kits',
       value: 'ui_kits' as const,
       featured: [
         {
           name: 'Выбор редакции',
           href: `/products?category=categ_1`,
-          imageSrc: '',
+          imageSrc: '/nav/ui/4.jpg',
         },
         {
           name: 'Новинки',
           href: '/products?category=categ_1&sort=desc',
-          imageSrc: '',
+          imageSrc: '/nav/ui/yellow.jpg',
         },
         {
           name: 'Популярное',
           href: '/products?category=categ_1',
-          imageSrc: '',
+          imageSrc: '/nav/ui/blue.jpg',
         },
       ],
     },
@@ -27,17 +27,17 @@ export const PRODUCT_CATEGORIES = [
         {
           name: 'Выбор редакции',
           href: `/products?category=icons`,
-          imageSrc: '/nav/icons/picks.jpg',
+          imageSrc: '/nav/icons/3.jpg',
         },
         {
           name: 'Новинки',
           href: '/products?category=icons&sort=desc',
-          imageSrc: '/nav/icons/new.jpg',
+          imageSrc: '/nav/icons/orange.jpg',
         },
         {
           name: 'Популярное',
           href: '/products?category=icons',
-          imageSrc: '/nav/icons/bestsellers.jpg',
+          imageSrc: '/nav/icons/1.jpg',
         },
       ],
     },
