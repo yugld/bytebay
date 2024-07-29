@@ -116,14 +116,12 @@ const Page = async ({ params }: PageProps) => {
                         </section>
                     </div>
 
-                    {/* Product images */}
                     <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
                         <div className="aspect-square rounded-lg">
                             <ImageSlider urls={validUrls} />
                         </div>
                     </div>
 
-                    {/* add to cart part */}
                     <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
                         <div>
                             <div className="mt-10">
@@ -148,8 +146,8 @@ const Page = async ({ params }: PageProps) => {
             <ProductReel
                 href="/products"
                 query={{ category: product.category, limit: 4 }}
-                title={`Similar ${label}`}
-                subtitle={`Browse similar high-quality ${label} just like '${product.name}'`}
+                title={`Похожие ${label}`}
+                subtitle={`Просмотреть ${label}, схожие на '${product.name}'`}
             />
         </MaxWidthWrapper>
     );
