@@ -1,3 +1,4 @@
+import { Icons } from "@/components/Icons";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProductReel from "@/components/ProductReel";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -29,7 +30,7 @@ export default function Home() {
                 <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                         Наш маркетплейс современный маркетплейс{" "}
-                        <span className="text-primary">с вашими товарами</span>.
+                        <span className="text-primary">с вашими товарами</span>
                     </h1>
                     <p className="mt-6 text-lg max-w-prose text-muted-foreground">
                         Добро пожаловать! Мы рады приветствовать вас!
@@ -38,8 +39,12 @@ export default function Home() {
                         <Link href="/products" className={buttonVariants()}>
                             Перейти к предложениям
                         </Link>
-                        <Button variant="ghost" className="text-center">
-                            Наша поддержка&rarr;
+                        <Button
+                            variant="ghost"
+                            className="group not-prose inline-flex items-center gap-1 text-current transition-colors duration-300 ease-in-out"
+                        >
+                            Наша поддержка
+                            <Icons.arrow />
                         </Button>
                     </div>
                 </div>

@@ -8,6 +8,7 @@ import { PRODUCT_CATEGORIES } from "@/config";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
 import PaymentStatus from "@/components/PaymentStatus";
+import { Icons } from "@/components/Icons";
 
 interface PageProps {
     searchParams: {
@@ -186,7 +187,8 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
                                     href="/products"
                                     className="text-sm font-medium text-blue-600 hover:text-blue-500"
                                 >
-                                    Продолжить покупки &rarr;
+                                    Продолжить покупки
+                                    <Icons.arrow />
                                 </Link>
                             </div>
                         </div>

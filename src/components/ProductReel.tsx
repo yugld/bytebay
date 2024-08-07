@@ -5,6 +5,7 @@ import { Product } from "@/payload-types";
 import { trpc } from "@/trpc/client";
 import Link from "next/link";
 import ProductListing from "./ProductListing";
+import { Icons } from "./Icons";
 
 interface ProductReelProps {
     title: string;
@@ -59,7 +60,8 @@ const ProductReel = (props: ProductReelProps) => {
                         href={href}
                         className="hidden text-sm font-medium text-violet-600 hover:text-violet-500 md:block"
                     >
-                        Каталог <span aria-hidden="true">&rarr;</span>
+                        Каталог
+                        <Icons.arrow />
                     </Link>
                 ) : null}
             </div>
