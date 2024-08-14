@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { useCart } from "@/hooks/use-cart";
 import { Product } from "@/payload-types";
 

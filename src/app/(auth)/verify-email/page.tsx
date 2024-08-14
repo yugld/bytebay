@@ -1,4 +1,4 @@
-import VerifyEmail from "@/components/VerifyEmail";
+import VerifyEmail from "@/components/emails/VerifyEmail";
 
 interface PageProps {
     searchParams: {

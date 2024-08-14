@@ -1,9 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Icons } from "./Icons";
+import MaxWidthWrapper from "../layout/MaxWidthWrapper";
+import { Icons } from "../Icons";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const Footer = () => {
     const pathname = usePathname();
@@ -16,7 +17,7 @@ const Footer = () => {
                     {pathsToMinimize.includes(pathname) ? null : (
                         <div className="pb-8 pt-16">
                             <div className="flex justify-center">
-                                <Icons.logo className="h-12 w-auto" />
+                                <Icons.logo className="w-auto" />
                             </div>
                         </div>
                     )}
@@ -40,7 +41,10 @@ const Footer = () => {
                                         продукты прямой сейчас{" "}
                                         <Link
                                             href="/sign-in?as=seller"
-                                            className="whitespace-nowrap font-medium text-black hover:text-zinc-900"
+                                            className={cn(
+                                                "whitespace-nowrap font-medium text-black hover:text-zinc-900",
+                                                "group not-prose inline-flex items-center gap-1 text-current transition-colors duration-300 ease-in-out"
+                                            )}
                                         >
                                             Начать
                                             <Icons.arrow />

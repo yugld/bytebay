@@ -1,5 +1,8 @@
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import ProductReel from "@/components/ProductReel";
+"use client";
+
+import { useEffect, useState } from "react";
+import MaxWidthWrapper from "@/components/layout/MaxWidthWrapper";
+import ProductReel from "@/components/products/ProductReel";
 import { PRODUCT_CATEGORIES } from "@/config";
 
 type Param = string | string[] | undefined;
@@ -15,15 +18,24 @@ const parse = (param: Param) => {
 const ProductsPage = ({ searchParams }: ProductsPageProps) => {
     const sort = parse(searchParams.sort);
     const category = parse(searchParams.category);
+    const [label, setLabel] = useState("Загружаем...");
 
-    const label = PRODUCT_CATEGORIES.find(
-        ({ value }) => value === category
-    )?.label;
+    useEffect(() => {
+        const categoryLabel = PRODUCT_CATEGORIES.find(
+            ({ value }) => value === category
+        )?.label;
+
+        if (categoryLabel) {
+            setLabel(categoryLabel);
+        } else {
+            setLabel("Каталог");
+        }
+    }, [category]);
 
     return (
         <MaxWidthWrapper>
             <ProductReel
-                title={label ?? "Загружаем..."}
+                title={label}
                 query={{
                     category,
                     limit: 40,

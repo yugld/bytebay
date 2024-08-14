@@ -5,17 +5,17 @@ export const PRODUCT_CATEGORIES = [
       featured: [
         {
           name: 'Выбор редакции',
-          href: `/products?category=categ_1`,
+          href: `/products?category=ui_kits`,
           imageSrc: '/nav/ui/4.jpg',
         },
         {
           name: 'Новинки',
-          href: '/products?category=categ_1&sort=desc',
+          href: '/products?category=ui_kits&sort=desc',
           imageSrc: '/nav/ui/yellow.jpg',
         },
         {
           name: 'Популярное',
-          href: '/products?category=categ_1',
+          href: '/products?category=ui_kits',
           imageSrc: '/nav/ui/blue.jpg',
         },
       ],

@@ -8,15 +8,15 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "./ui/sheet";
-import { Separator } from "./ui/separator";
+} from "../ui/sheet";
+import { Separator } from "../ui/separator";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
-import { buttonVariants } from "./ui/button";
+import { buttonVariants } from "../ui/button";
 import { useCart } from "@/hooks/use-cart";
 import { useState, useEffect } from "react";
 import CartItem from "./CartItem";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea } from "../ui/scroll-area";
 
 const Cart = () => {
     const { items } = useCart();
