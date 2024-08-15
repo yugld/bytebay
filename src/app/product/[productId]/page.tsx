@@ -1,4 +1,3 @@
-import AddToCartButton from "@/components/AddToCartButton";
 import ImageSlider from "@/components/products/ImageSlider";
 import MaxWidthWrapper from "@/components/layout/MaxWidthWrapper";
 import ProductReel from "@/components/products/ProductReel";
@@ -8,6 +7,7 @@ import { formatPrice } from "@/lib/utils";
 import { Check, Shield } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 
 interface PageProps {
     params: {
