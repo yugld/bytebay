@@ -42,8 +42,6 @@ const Page = () => {
 
     const { mutate: signIn, isLoading } = trpc.auth.signIn.useMutation({
         onSuccess: async () => {
-            toast.success("Вы вошли в аккаунт");
-
             router.refresh();
 
             if (origin) {
@@ -76,7 +74,7 @@ const Page = () => {
                     <div className="flex flex-col items-center space-y-2 text-center">
                         <Icons.logo className="w-36" />
                         <h1 className="text-2xl font-semibold tracking-tight">
-                            Вход в ваш аккаунт {isSeller ? "продавца" : ""}
+                            Вход в аккаунт {isSeller ? "продавца" : ""}
                         </h1>
 
                         <Link
