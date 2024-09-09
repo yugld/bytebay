@@ -65,9 +65,9 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
                         </h1>
                         {order._isPaid ? (
                             <p className="mt-2 text-base text-muted-foreground">
-                                Ваш заказ был обработан, и доступен для
-                                скачивания ниже. Мы отправили вашу чек ​​и
-                                информацию о заказе на{" "}
+                                Ваш заказ был готов, и доступен для скачивания
+                                ниже. Мы отправили вашу чек ​​и информацию о
+                                заказе на{" "}
                                 {typeof order.user !== "string" ? (
                                     <span className="font-medium text-gray-900">
                                         {order.user.email}
@@ -78,7 +78,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
                         ) : (
                             <p className="mt-2 text-base text-muted-foreground">
                                 Пожалуйста, дождитесь подтверждения оплаты и мы
-                                отправим вам подтверждение!
+                                отправим вам заказ!
                             </p>
                         )}
 
