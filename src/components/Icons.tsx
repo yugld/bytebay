@@ -9,6 +9,7 @@ export const Icons = {
             />
         </svg>
     ),
+    //animated
     arrow: (props: LucideProps) => (
         <svg
             {...props}
