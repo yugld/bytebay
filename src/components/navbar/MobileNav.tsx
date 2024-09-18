@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { User } from "@/payload-types";
 import { useAuth } from "@/hooks/use-auth";
 
-const MobileNav = ({ user }: { user: User }) => {
+const MobileNav = ({ user }: { user: User | null }) => {
     const { signOut } = useAuth();
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const pathname = usePathname();
