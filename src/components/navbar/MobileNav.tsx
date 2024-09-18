@@ -6,8 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { User } from "@/payload-types";
+import { useAuth } from "@/hooks/use-auth";
 
-const MobileNav = () => {
+const MobileNav = ({ user }: { user: User }) => {
+    const { signOut } = useAuth();
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const pathname = usePathname();
 
@@ -45,7 +48,7 @@ const MobileNav = () => {
 
             <div className="fixed overflow-y-scroll overscroll-y-none inset-0 z-40 flex">
                 <div className="w-4/5">
-                    <div className="relative flex w-full max-w-sm flex-col overflow-y-auto bg-white pb-12 shadow-xl">
+                    <div className="relative flex w-full max-w-sm flex-col overflow-y-auto bg-white shadow-xl">
                         <div className="flex px-4 pb-2 pt-5">
                             <button
                                 type="button"
@@ -56,16 +59,16 @@ const MobileNav = () => {
                             </button>
                         </div>
 
-                        <div className="mt-2">
+                        <div className="product_cat">
                             <ul>
                                 {PRODUCT_CATEGORIES.map((category) => (
                                     <li
                                         key={category.label}
-                                        className="space-y-10 px-4 pb-8 pt-10"
+                                        className="px-4 pb-8"
                                     >
-                                        <div className="border-b border-gray-200">
+                                        <div className="">
                                             <div className="-mb-px flex">
-                                                <p className="border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 py-4 text-base font-medium">
+                                                <p className="border-transparent text-gray-900 flex-1 whitespace-nowrap py-4 text-lg font-medium">
                                                     {category.label}
                                                 </p>
                                             </div>
@@ -87,7 +90,7 @@ const MobileNav = () => {
                                                     </div>
                                                     <Link
                                                         href={item.href}
-                                                        className="mt-6 block font-medium text-gray-900"
+                                                        className="mt-2 block font-medium text-gray-900"
                                                     >
                                                         {item.name}
                                                     </Link>
@@ -99,25 +102,58 @@ const MobileNav = () => {
                             </ul>
                         </div>
 
-                        <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-                            <div className="flow-root">
-                                <Link
-                                    onClick={() => closeOnCurrent("/sign-in")}
-                                    href="/sign-in"
-                                    className="-m-2 block p-2 font-medium text-gray-900"
-                                >
-                                    Войти
-                                </Link>
-                            </div>
-                            <div className="flow-root">
-                                <Link
-                                    onClick={() => closeOnCurrent("/sign-up")}
-                                    href="/sign-up"
-                                    className="-m-2 block p-2 font-medium text-gray-900"
-                                >
-                                    Регистрация
-                                </Link>
-                            </div>
+                        <div className="border-t border-gray-200 px-4 py-6">
+                            {user ? (
+                                <div className="space-y-6">
+                                    <div className="flow-root">
+                                        <p className="-m-2 block p-2 font-medium text-primary">
+                                            {user.email}
+                                        </p>
+                                    </div>
+                                    <div className="flow-root">
+                                        <Link
+                                            href="/sell"
+                                            className="-m-2 block p-2 font-medium text-gray-900"
+                                        >
+                                            Кабинет продавца
+                                        </Link>
+                                    </div>
+                                    <div className="flow-root">
+                                        <Link
+                                            onClick={signOut}
+                                            href="/sign-up"
+                                            className="-m-2 block p-2 font-medium text-gray-900"
+                                        >
+                                            Выйти
+                                        </Link>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="space-y-6">
+                                    <div className="flow-root">
+                                        <Link
+                                            onClick={() =>
+                                                closeOnCurrent("/sign-in")
+                                            }
+                                            href="/sign-in"
+                                            className="-m-2 block p-2 font-medium text-gray-900"
+                                        >
+                                            Войти
+                                        </Link>
+                                    </div>
+                                    <div className="flow-root">
+                                        <Link
+                                            onClick={() =>
+                                                closeOnCurrent("/sign-up")
+                                            }
+                                            href="/sign-up"
+                                            className="-m-2 block p-2 font-medium text-gray-900"
+                                        >
+                                            Регистрация
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
