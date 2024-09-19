@@ -1,12 +1,12 @@
 import Providers from "@/components/Providers";
 import { cn, constructMetadata } from "@/lib/utils";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,8 +28,7 @@ export default function RootLayout({
                 <main className="relative flex flex-col min-h-screen">
                     <Providers>
                         <Navbar />
-                        <div className="flex-grow flex-1">{children}</div>
-                        <Footer />
+                        <PageTransition>{children}</PageTransition> <Footer />
                     </Providers>
                 </main>
 
