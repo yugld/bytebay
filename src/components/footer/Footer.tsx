@@ -32,17 +32,19 @@ const Footer = () => {
                                     />
                                 </div>
 
-                                <div className="text-center relative mx-auto max-w-sm">
+                                <div className="text-center relative mx-auto max-w-sm space-y-2">
                                     <h3 className="font-semibold text-gray-900">
                                         Стать продавцом
                                     </h3>
-                                    <p className="mt-2 text-sm text-muted-foreground">
-                                        Вы можете начать продавать цифровые
-                                        продукты прямой сейчас{" "}
+                                    <p className="space-y-2 text-sm text-muted-foreground flex flex-col">
+                                        <span>
+                                            Вы можете начать продавать цифровые
+                                            продукты прямой сейчас
+                                        </span>
                                         <Link
                                             href="/sign-in?as=seller"
                                             className={cn(
-                                                "whitespace-nowrap font-medium text-black hover:text-zinc-900",
+                                                "whitespace-nowrap font-medium text-black hover:text-primary mx-auto",
                                                 "group not-prose inline-flex items-center gap-1 text-current transition-colors duration-300 ease-in-out"
                                             )}
                                         >
@@ -63,7 +65,7 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    <div className="mt-4 flex items-center justify-center md:mt-0">
+                    <div className="mt-4 hidden sm:flex items-center justify-center md:mt-0">
                         <div className="flex space-x-8">
                             <Link
                                 href="#"
