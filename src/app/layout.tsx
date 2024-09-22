@@ -7,6 +7,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import PageTransition from "@/components/PageTransition";
+import Gradient from "@/components/layout/Gradient";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,9 @@ export default function RootLayout({
                 <main className="relative flex flex-col min-h-screen">
                     <Providers>
                         <Navbar />
-                        <PageTransition>{children}</PageTransition> <Footer />
+                        <Gradient />
+                        <PageTransition>{children}</PageTransition>
+                        <Footer />
                     </Providers>
                 </main>
 
